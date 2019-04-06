@@ -1,0 +1,102 @@
+<ng-template
+  [ngIf]="readonly" 
+  [ngIfElse]="readonlyFalse">
+  <button class="btn btn-dark mb-2 ml-2 mr-2" 
+    routerLink=""
+  >
+    Back
+  </button>
+  <button class="btn btn-dark mb-2" 
+    (click)="editInfo()"
+  >
+    Edit
+  </button>
+</ng-template>
+<ng-template
+  #readonlyFalse>
+  <button class="btn btn-dark mb-2 ml-2 mr-2" 
+    (click)="saveChanges()"
+  >
+    Save
+  </button>
+  <button class="btn btn-dark mb-2"
+    (click)="cancelChanges()"
+  >
+    Cancel
+  </button>
+</ng-template>
+<flash-messages></flash-messages>
+<div class="container">
+  <form>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text"
+          id="basic-addon1"
+        >
+          Name
+        </span>
+      </div>
+      <input type="text" class="form-control"
+        [ngModel]="user?.name"
+        (ngModelChange)="user.name = $event"
+        name="name"
+        [readOnly]="readonly">
+    </div>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text"
+              id="basic-addon1"
+        >
+          Username
+        </span>
+      </div>
+      <input type="text" class="form-control" 
+        [ngModel]="user?.username"
+        (ngModelChange)="user.username = $event"
+        name="username"
+        [readOnly]="readonly">
+    </div>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text"
+          id="basic-addon1"
+        >
+          Email
+        </span>
+      </div>
+      <input type="text" class="form-control"
+        [ngModel]="user?.email"
+        (ngModelChange)="user.email = $event"
+        name="email"
+        [readOnly]="readonly">
+    </div>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text"
+          id="basic-addon1"
+        >
+          Phone
+        </span>
+      </div>
+      <input type="text" class="form-control"
+        [ngModel]="user?.phone"
+        (ngModelChange)="user.phone = $event"
+        name="phone"
+        [readOnly]="readonly">
+    </div>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text"
+          id="basic-addon1"
+        >
+          Website
+        </span>
+      </div>
+      <input type="text" class="form-control"
+        [ngModel]="user?.website"
+        (ngModelChange)="user.website = $event"
+        name="website"
+        [readOnly]="readonly">
+    </div>
+  </form>
+</div>

@@ -1,0 +1,22 @@
+<button class="btn btn-dark mb-2 ml-2" 
+  routerLink=""
+  >
+Back
+</button>
+<div class="container">
+  <div class="justify-content-center">
+    <ng-container *ngFor="let post of posts">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="card bg-light mb-4">
+                <div class="card-header">User Id: {{ post.userId }} Post: {{ post.id }}</div>
+                <div class="card-body text-dark">
+                  <h5 class="card-title">{{ post.title }}</h5>
+                  <p class="card-text">{{ post.body }}</p>
+                </div>
+            </div>
+          </div>
+        </div>
+    </ng-container>
+  </div>
+</div>
